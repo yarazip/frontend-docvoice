@@ -1,0 +1,15 @@
+<div
+  cdkDrag
+  class="drag-box"
+>
+  Arraste-me!
+</div>
+<div class="drag-drop-container">
+  <div
+    class="drag-item"
+    cdkDrag
+    *ngFor="let item of items"
+  >
+    {{item.name}}
+  </div>
+</div>
