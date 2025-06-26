@@ -1,4 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+:root, [data-theme="light"] {
+  --primary-bg: #F2F2F2;
+  --secondary-bg: #EAE4D5;
+  --accent-color: #B6B09F;
+  --text-color: #000000;
+
+  --button-bg: #B6B09F;
+  --button-text: #000000;
+  --button-hover: #9A9587;
+
+  --drop-zone-bg: #EAE4D5;
+  --drop-zone-border: #B6B09F;
+  --drop-zone-hover: #D9D3C5;
+
+  --spinner-color: #B6B09F;
+
+  --header-bg: #f8f8f8;
+}
+
+[data-theme="dark"] {
+  --primary-bg: #161813;
+  --secondary-bg: #3C3D37;
+  --accent-color: #697565;
+  --text-color: #ECDFCC;
+
+  --button-bg: #697565;
+  --button-text: #ECDFCC;
+  --button-hover: #5A6655;
+
+  --drop-zone-bg: #3C3D37;
+  --drop-zone-border: #697565;
+  --drop-zone-hover: #4A4B45;
+
+  --spinner-color: #697565;
+  --header-bg: #000000;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
