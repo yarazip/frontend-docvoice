@@ -23,25 +23,21 @@
   </div>
 </div>
 
-<div class="container mt-5 col-4 text-center" *ngIf="files.length > 0">
-  <h3>Arquivos selecionados:</h3>
-  <div *ngFor="let file of files">
-    {{ file.name }} ({{ file.size }} bytes)
+<div class="container mt-5 col-4 text-center" *ngIf="file">
+  <h3>Arquivo selecionado:</h3>
+  <div>
+    📄 {{ file?.name }}
+    <button (click)="file = undefined">🗑️ Remover</button>
   </div>
 </div>
 
-@if(isLoading){
-  <div class="container mt-3 col-4 text-center">
-    <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Carregando...</span>
-    </div>
-    <p class="mt-2">Processando arquivo...</p>
+<div *ngIf="isLoading" class="container mt-3 col-4 text-center">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Carregando...</span>
   </div>
-}
+  <p class="mt-2">Processando arquivo...</p>
+</div>
 
-@if(text){
-  <div class="container mt-5 col-8">
-    <app-audio-player [textContent]="text"></app-audio-player>
-  </div>
-}
-
+<div *ngIf="text" class="container mt-5 col-8">
+  <app-audio-player [textContent]="text"></app-audio-player>
+</div>

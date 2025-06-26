@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5 col-8">
+  <h2 class="mb-4 text-center">Resultado da Conversão</h2>
+
+  <!-- Player de áudio -->
+  <app-audio-player [textContent]="text"></app-audio-player>
+
+  <!-- Texto transcrito -->
+  <div class="mt-4">
+    <h5>Texto extraído:</h5>
+    <p>{{ text }}</p>
+  </div>
+
+  <!-- Ações -->
+  <div class="mt-4 d-flex gap-3 justify-content-center">
+    <button class="btn btn-secondary" (click)="voltar()">Voltar</button>
+    <button class="btn btn-primary" (click)="baixarAudio()">⬇️ Baixar áudio</button>
+    <button class="btn btn-outline-primary" (click)="reprocessar()">🔄 Reprocessar</button>
+  </div>
+</div>
