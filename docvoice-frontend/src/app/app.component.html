@@ -1,31 +1,40 @@
 <app-navbar></app-navbar>
 
 <div class="container mt-5 col-4 text-center">
-  <p>Solte um arquivo em qualquer lugar para extrair seu conteúdo textual e gerar descrições de imagem.</p>
+  <p>Solte um arquivo em qualquer lugar para extrair seu conteúdo textual e gerar áudio.</p>
 </div>
 
 <div class="container mt-5 col-4">
   <div
-  class="file-drop-zone"
-  [class.dragover]="isDragOver"
-  (dragover)="onDragOver($event)"
-  (dragleave)="onDragLeave($event)"
-  (drop)="onDrop($event)">
-  <input
-    type="file"
-    multiple
-    (change)="onFileSelect($event)"
-    #fileInput
-    style="display: none;">
-  <button (click)="fileInput.click()">Selecione um arquivo
-  </button>
-</div>
+    class="file-drop-zone"
+    [class.dragover]="isDragOver"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)">
+    <input
+      type="file"
+      (change)="onFileSelect($event)"
+      #fileInput
+      style="display: none;"
+      accept=".pdf,.ppt,.pptx,image/*">
+    <button type="button" class="btn btn-primary" (click)="fileInput.click()" [disabled]="isLoading">
+      {{ isLoading ? 'Processando...' : 'Selecione um arquivo' }}
+    </button>
+  </div>
 </div>
 
-
-<div class="container mt-5 col-4 text-center">
-  <h3>Arquivos selecionado:</h3>
-    <div *ngFor="let file of files">
-      {{ file.name }} ({{ file.size }} bytes)
+@if(isLoading){
+  <div class="container mt-3 col-4 text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Carregando...</span>
     </div>
-</div>
+    <p class="mt-2">Processando arquivo...</p>
+  </div>
+}
+
+@if(text){
+  <div class="container mt-5 col-8">
+    <app-audio-player [textContent]="text"></app-audio-player>
+  </div>
+}
+

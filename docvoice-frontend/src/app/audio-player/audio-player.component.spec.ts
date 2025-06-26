@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DragDropComponent } from './drag-drop.component';
+import { AudioPlayerComponent } from './audio-player.component';
 
-describe('DragDropComponent', () => {
-  let component: DragDropComponent;
-  let fixture: ComponentFixture<DragDropComponent>;
+describe('AudioPlayerComponent', () => {
+  let component: AudioPlayerComponent;
+  let fixture: ComponentFixture<AudioPlayerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DragDropComponent]
+      imports: [AudioPlayerComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DragDropComponent);
+    fixture = TestBed.createComponent(AudioPlayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
