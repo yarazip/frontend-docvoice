@@ -1,19 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-
 :host {
   display: block;
   background: var(--header-bg);
   color: var(--text-color);
   padding: 1rem 2rem;
   border-bottom: 0.0625rem solid var(--accent-color);
-}
-
-.navbar-subtitle {
-  margin: 0;
-  font-weight: 300;
-  color: var(--text-color);
-  font-size: 0.9rem;
 }
 
 .navbar-brand {
@@ -25,10 +17,22 @@
 .navbar-logo {
   color: var(--text-color);
   font-family: 'Montserrat', sans-serif;
-  font-weight: 100 !important;
+  font-weight: 700; /* substitui o 100 para legibilidade */
   margin: 0;
-  font-size: 1.8rem;
-  line-height: 1.2;
+  font-size: 2rem;
+  line-height: 1.3;
+  letter-spacing: 0.02rem;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* melhora leitura em fundos claros/escuros */
+}
+
+.navbar-subtitle {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-content {
@@ -45,20 +49,25 @@
   background: transparent;
   border: 0.125rem solid var(--accent-color);
   border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
   color: var(--text-color);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   flex-shrink: 0;
   position: absolute;
   right: 2.5rem;
 }
 
+.theme-toggle-btn i {
+  transition: transform 0.3s ease;
+}
+
 .theme-toggle-btn:hover {
   background-color: var(--button-hover);
+  transform: scale(1.05);
 }
