@@ -1,3 +1,10 @@
+.container p,
+.container h3 {
+  font-size: 1.5rem;         // aumenta o texto para leitura confortável
+  line-height: 1.6;
+  color: var(--text-color);               // alta legibilidade (altere conforme tema)
+}
+
 body {
   background-color: var(--primary-bg);
   color: var(--text-color);
@@ -29,7 +36,16 @@ body {
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
+  padding: 1rem 2rem;               /* aumenta o tamanho do botão */
+  font-size: 1.25rem;               /* aumenta o tamanho da fonte */
+  border-radius: 0.5rem;            /* arredondamento */
+  min-width: 200px;                 /* largura mínima */
+  cursor: pointer;                 /* cursor de ponteiro ao passar o mouse */
+  transition: background-color 0.3s;
+  font-weight: bold; 
+  font-size: 1.5rem;              /* deixa a fonte mais destacada */
 }
+
 
 .btn-primary:hover {
   background-color: var(--button-hover);

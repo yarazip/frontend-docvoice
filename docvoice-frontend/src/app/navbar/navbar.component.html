@@ -4,9 +4,9 @@
       <h1 class="navbar-logo">DocVoice</h1>
       <p class="navbar-subtitle">Transforme slides em áudio</p>
     </div>
-
   </div>
-  <button (click)="toggleTheme()" class="theme-toggle-btn" title="Alternar tema">
-    <i [class]="themeService.getCurrentTheme() === 'light' ? 'fas fa-moon' : 'fas fa-sun'"></i>
+
+  <button (click)="toggleTheme()" class="theme-toggle-btn" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+    <i [ngClass]="themeService.getCurrentTheme() === 'light' ? 'fas fa-moon' : 'fas fa-sun'"></i>
   </button>
 </nav>

@@ -1,0 +1,16 @@
+<div class="container text-center mt-5">
+  <h2>Resultado da Conversão</h2>
+
+  <app-audio-player [textContent]="text"></app-audio-player>
+
+  <div class="mt-4">
+    <button class="btn btn-secondary me-2" (click)="voltar()">🔙 Voltar</button>
+    <button class="btn btn-outline-primary" (click)="voltar()">🔄 Reprocessar</button>
+    <button class="btn btn-success ms-2" [disabled]="!text">⬇️ Baixar Áudio</button>
+  </div>
+
+  <div class="text-start mt-5">
+    <h4>Texto transcrito:</h4>
+    <p>{{ text }}</p>
+  </div>
+</div>

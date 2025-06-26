@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ThemeService } from '.././service/themeService';
+import { ThemeService } from '.././service/ThemeService';
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +17,5 @@ toggleTheme() {
 }
 
 }
-
 
 
