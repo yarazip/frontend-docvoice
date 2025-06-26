@@ -17,9 +17,17 @@
       #fileInput
       style="display: none;"
       accept=".pdf,.ppt,.pptx,image/*">
-    <button type="button" class="btn btn-primary" (click)="fileInput.click()" [disabled]="isLoading">
-      {{ isLoading ? 'Processando...' : 'Selecione um arquivo' }}
-    </button>
+    <button
+  type="button"
+  class="btn btn-primary"
+  (click)="fileInput.click()"
+  [disabled]="isLoading"
+  tabindex="0"
+  aria-label="Selecionar um arquivo para upload"
+>
+  {{ isLoading ? 'Processando...' : 'Selecione um arquivo' }}
+</button>
+
   </div>
 </div>
 
