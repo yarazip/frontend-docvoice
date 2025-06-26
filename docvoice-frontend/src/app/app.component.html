@@ -23,6 +23,13 @@
   </div>
 </div>
 
+<div class="container mt-5 col-4 text-center" *ngIf="files.length > 0">
+  <h3>Arquivos selecionados:</h3>
+  <div *ngFor="let file of files">
+    {{ file.name }} ({{ file.size }} bytes)
+  </div>
+</div>
+
 @if(isLoading){
   <div class="container mt-3 col-4 text-center">
     <div class="spinner-border text-primary" role="status">
