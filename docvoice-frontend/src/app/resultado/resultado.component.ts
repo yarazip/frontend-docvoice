@@ -20,7 +20,7 @@ export class ResultadoComponent {
   }
 
   reprocessar() {
-    // lógica de reprocessamento
+    // TODO: Implement the reprocessing logic here.
     console.log('Reprocessando...');
   }
 
