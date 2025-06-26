@@ -23,6 +23,10 @@
   </div>
 </div>
 
+<!-- CORRIGIDO: exibe um único arquivo -->
+<div class="container mt-5 col-4 text-center" *ngIf="file">
+  <h3>Arquivo selecionado:</h3>
+  <p>{{ file.name }} ({{ file.size }} bytes)</p>
 <div class="container mt-5 col-4 text-center" *ngIf="file">
   <h3>Arquivo selecionado:</h3>
   <div>
@@ -31,6 +35,15 @@
   </div>
 </div>
 
+<!-- Loader -->
+@if(isLoading){
+  <div class="container mt-3 col-4 text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Carregando...</span>
+    </div>
+    <p class="mt-2">Processando arquivo...</p>
+  </div>
+}
 <div *ngIf="isLoading" class="container mt-3 col-4 text-center">
   <div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Carregando...</span>
@@ -38,6 +51,12 @@
   <p class="mt-2">Processando arquivo...</p>
 </div>
 
+<!-- Player -->
+@if(text){
+  <div class="container mt-5 col-8">
+    <app-audio-player [textContent]="text"></app-audio-player>
+  </div>
+}
 <div *ngIf="text" class="container mt-5 col-8">
   <app-audio-player [textContent]="text"></app-audio-player>
 </div>

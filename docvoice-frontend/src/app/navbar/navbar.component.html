@@ -1,4 +1,12 @@
 <nav class="navbar">
-  <div class="navbar-title">DocVoice</div>
-  <div class="navbar-subtitle">Transforme slides em áudio</div>
+  <div class="navbar-content">
+    <div class="navbar-brand">
+      <h1 class="navbar-logo">DocVoice</h1>
+      <p class="navbar-subtitle">Transforme slides em áudio</p>
+    </div>
+
+  </div>
+  <button (click)="toggleTheme()" class="theme-toggle-btn" title="Alternar tema">
+    <i [class]="themeService.getCurrentTheme() === 'light' ? 'fas fa-moon' : 'fas fa-sun'"></i>
+  </button>
 </nav>
