@@ -52,6 +52,20 @@ export class AppComponent {
     if(files) this.handleFiles(files[0]);
   }
 
+  ngOnInit(): void {
+  window.addEventListener('keydown', this.onKeyDown);
+}
+
+ngOnDestroy(): void {
+  window.removeEventListener('keydown', this.onKeyDown);
+}
+
+onKeyDown = (event: KeyboardEvent) => {
+  if (event.ctrlKey && event.key === 'Enter' && this.file && !this.isLoading) {
+    this.handleFiles(this.file);
+  }
+};
+
   private async handleFiles(file: File) {
     try {
       this.isLoading = true;
