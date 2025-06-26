@@ -1,21 +1,64 @@
-.navbar {
-  padding: 40px!important;
-  background: #000;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.navbar-title {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+
+:host {
+  display: block;
+  background: var(--header-bg);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  border-bottom: 0.0625rem solid var(--accent-color);
 }
 
 .navbar-subtitle {
-  margin-top: 1rem;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-left: 1rem;
+  margin: 0;
+  font-weight: 300;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100 !important;
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.navbar-content {
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 0.125rem solid var(--accent-color);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  position: absolute;
+  right: 2.5rem;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--button-hover);
 }
