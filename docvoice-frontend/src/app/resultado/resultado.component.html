@@ -1,16 +1,24 @@
-<div class="container text-center mt-5">
-  <h2>Resultado da Conversão</h2>
+<app-navbar></app-navbar>
 
-  <app-audio-player [textContent]="text"></app-audio-player>
+<div class="container resultado-container">
+  <h2 class="resultado-titulo">Resultado da Conversão</h2>
+
+  <section class="texto-extraido">
+    <h3>Texto Extraído:</h3>
+    <p>{{ textStorage.getText() }}</p>
+  </section>
+
+  <section class="audio-section" *ngIf="audioUrl">
+    <h3>Ouça o Áudio:</h3>
+    <audio controls [src]="audioUrl"></audio>
+    <button class="btn btn-primary mt-3" (click)="downloadAudio()">
+      <i class="fas fa-download"></i> Baixar Áudio
+    </button>
+  </section>
 
   <div class="mt-4">
-    <button class="btn btn-secondary me-2" (click)="voltar()">🔙 Voltar</button>
-    <button class="btn btn-outline-primary" (click)="voltar()">🔄 Reprocessar</button>
-    <button class="btn btn-success ms-2" [disabled]="!text">⬇️ Baixar Áudio</button>
-  </div>
-
-  <div class="text-start mt-5">
-    <h4>Texto transcrito:</h4>
-    <p>{{ text }}</p>
+    <button class="btn btn-outline-secondary" routerLink="/">
+      <i class="fas fa-arrow-left"></i> Voltar para nova conversão
+    </button>
   </div>
 </div>
