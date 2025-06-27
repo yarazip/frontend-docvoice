@@ -31,10 +31,17 @@
   </div>
 </div>
 
-<!-- CORRIGIDO: exibe um único arquivo -->
+<!-- CORRIGIDO: exibe um único arquivo 
 <div class="container mt-5 col-4 text-center" *ngIf="file">
   <h3>Arquivo selecionado:</h3>
   <p>{{ file.name }} ({{ file.size }} bytes)</p>
+</div>-->
+<div class="container mt-5 col-4 text-center selected-file" *ngIf="file">
+  <h3>Arquivo selecionado:</h3>
+  <span>{{ file.name }} ({{ file.size }} bytes)</span>
+<button class="remove-btn" (click)="removeFile()" aria-label="Remover arquivo">
+  <i class="fa fa-trash"></i> Remover
+</button>
 </div>
 
 <!-- Loader -->

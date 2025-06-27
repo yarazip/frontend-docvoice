@@ -134,4 +134,8 @@ export class AppComponent {
       this.isLoading = false;
     }
   }
+    public removeFile() {
+    this.file = undefined;
+    this.text = undefined;
+  }
 }

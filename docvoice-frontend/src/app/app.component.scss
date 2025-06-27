@@ -54,3 +54,40 @@ body {
 .spinner-border.text-primary {
   color: var(--spinner-color) !important;
 }
+
+
+
+.selected-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.file-icon {
+  font-size: 2rem;
+}
+
+.remove-btn {
+  margin-top: 0.7rem;
+  background: #f5e9e9;
+  border: 1px solid #e5bcbc;
+  color: #c00;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.remove-btn:hover {
+  background: #e8bcbc;
+  color: #fff;
+}
+.remove-btn i {
+  font-size: 1.2rem;
+}
+
