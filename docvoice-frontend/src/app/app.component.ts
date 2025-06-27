@@ -50,7 +50,8 @@ export class AppComponent {
       this.audioDownloadUrl = URL.createObjectURL(audioBlob);
       this.audioUrl = this.sanitizer.bypassSecurityTrustUrl(this.audioDownloadUrl);
     } catch (error: any) {
-      this.snackbarService.error('Erro ao gerar áudio: ' + error.message);
+      const errorMessage = error instanceof Error ? error.message : 'Erro ao gerar áudio';
+      this.snackbarService.error(errorMessage);
     }
   }
 
@@ -128,14 +129,25 @@ export class AppComponent {
 
       this.router.navigate(['/resultado']);
     } catch (err: any) {
-      this.snackbarService.error(err);
+      // Agora o erro já vem tratado do service como Error com message
+      const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
+      this.snackbarService.error(errorMessage);
       this.text = "";
+      // Limpa o arquivo quando há erro
+      this.file = undefined;
     } finally {
       this.isLoading = false;
     }
   }
-    public removeFile() {
+
+  public removeFile() {
     this.file = undefined;
     this.text = undefined;
+    // Limpa também o áudio se existir
+    if (this.audioDownloadUrl) {
+      URL.revokeObjectURL(this.audioDownloadUrl);
+      this.audioDownloadUrl = undefined;
+      this.audioUrl = undefined;
+    }
   }
-}
+}                         
