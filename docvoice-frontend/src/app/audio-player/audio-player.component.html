@@ -6,14 +6,14 @@
 
   <div class="row my-5">
     @if (!isSpeaking()) {
-      <button type="button" class="btn btn-primary" style="width: 100px;" (click)="speak()" [disabled]="textContent().length === 0">
-        Ouvir
+      <button type="button" class="btn btn-primary" style="width: 115px;" (click)="speak()" [disabled]="textContent().length === 0">
+        <i class="fas fa-volume-up"></i> Ouvir
       </button>
     }
 
       @if (isSpeaking()) {
-        <button type="button" class="btn btn-primary" style="width: 100px;" (click)="stop()">
-          Parar
+        <button type="button" class="btn btn-primary" style="width: 115px;" (click)="stop()">
+          <i class="fas fa-volume-mute"></i> Parar
         </button>
       }
   </div>
